@@ -38,6 +38,10 @@ const manifest: chrome.runtime.ManifestV3 = {
       matches: ["*://*/*"],
     },
   ],
+  permissions: [
+    "contextMenus",
+    "storage"
+  ]
 };
 
 export default manifest;

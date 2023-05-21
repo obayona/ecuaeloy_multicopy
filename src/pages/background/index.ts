@@ -8,4 +8,23 @@ reloadOnUpdate("pages/background");
  */
 reloadOnUpdate("pages/content/style.scss");
 
-console.log("background loaded");
+function setupContextMenu() {
+  chrome.contextMenus.create({
+    id: 'ecualoy-multicopy-menu',
+    title: 'Copy',
+    contexts: ['selection'],
+  });
+}
+
+chrome.runtime.onInstalled.addListener(() => {
+  setupContextMenu();
+});
+
+async function saveItem(text: string) {
+  const key = String(Date.now());
+  await chrome.storage.local.set({ [key]: text });
+}
+
+chrome.contextMenus.onClicked.addListener((data) => {
+  saveItem(data.selectionText);
+});
