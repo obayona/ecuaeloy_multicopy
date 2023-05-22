@@ -19,14 +19,6 @@ const manifest: chrome.runtime.ManifestV3 = {
   icons: {
     "128": "icon-128.png",
   },
-  content_scripts: [
-    {
-      matches: ["http://*/*", "https://*/*", "<all_urls>"],
-      js: ["src/pages/content/index.js"],
-      // KEY for cache invalidation
-      css: ["assets/css/contentStyle<KEY>.chunk.css"],
-    },
-  ],
   web_accessible_resources: [
     {
       resources: [
@@ -42,7 +34,7 @@ const manifest: chrome.runtime.ManifestV3 = {
     "contextMenus",
     "storage"
   ],
-  default_locale: "es"
+  default_locale: "en"
 };
 
 export default manifest;

@@ -11,22 +11,13 @@ const publicDir = resolve(__dirname, "..", "..", "public");
 
 export default function makeManifest(
   manifest: chrome.runtime.ManifestV3,
-  config: { isDev: boolean; contentScriptCssKey?: string }
+  config: { isDev: boolean }
 ): PluginOption {
   function makeManifest(to: string) {
     if (!fs.existsSync(to)) {
       fs.mkdirSync(to);
     }
     const manifestPath = resolve(to, "manifest.json");
-
-    // Naming change for cache invalidation
-    if (config.contentScriptCssKey) {
-      manifest.content_scripts.forEach((script) => {
-        script.css = script.css.map((css) =>
-          css.replace("<KEY>", config.contentScriptCssKey)
-        );
-      });
-    }
 
     fs.writeFileSync(
       manifestPath,
