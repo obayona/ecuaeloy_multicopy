@@ -20,15 +20,15 @@ const Popup = () => {
     <div className="popup">
       <div className="popup-header">
         <header className="popup-logo">
-          <img src={logo} alt="Ecuaeloy multicopy logo"/>
+          <img src={logo} alt="EcuaEloy multicopy logo"/>
         </header>
 
         <div className="popup-menu">
-          <button className="popup-menu-button" title="Copy All" onClick={copyAll}>
+          <button className="popup-menu-button" title={chrome.i18n.getMessage("copyAll")} onClick={copyAll}>
             <img src={copyIcon} alt=""/>
           </button>
 
-          <button className="popup-menu-button" title="Clear" onClick={clearItems}>
+          <button className="popup-menu-button" title={chrome.i18n.getMessage("clear")} onClick={clearItems}>
             <img src={deleteIcon} alt=""/>
           </button>
         </div>
@@ -40,10 +40,10 @@ const Popup = () => {
             <span>{truncate(value, 30)}</span>
 
             <span>
-              <button className="popup-menu-button" title="Copy" onClick={() => copyItem(key)}>
+              <button className="popup-menu-button" title={chrome.i18n.getMessage("copy")} onClick={() => copyItem(key)}>
                 <img src={copyIcon} alt=""/>
               </button>
-              <button className="popup-menu-button" title="Remove" onClick={() => removeItem(key)}>
+              <button className="popup-menu-button" title={chrome.i18n.getMessage("remove")} onClick={() => removeItem(key)}>
                 <img src={deleteIcon} alt=""/>
               </button>
             </span>

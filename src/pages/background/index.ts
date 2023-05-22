@@ -11,7 +11,7 @@ reloadOnUpdate("pages/content/style.scss");
 function setupContextMenu() {
   chrome.contextMenus.create({
     id: 'ecualoy-multicopy-menu',
-    title: 'Copy',
+    title: chrome.i18n.getMessage("copy"),
     contexts: ['selection'],
   });
 }

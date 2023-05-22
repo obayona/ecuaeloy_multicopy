@@ -5,9 +5,9 @@ import packageJson from "./package.json";
  */
 const manifest: chrome.runtime.ManifestV3 = {
   manifest_version: 3,
-  name: packageJson.name,
+  name: "__MSG_appName__",
   version: packageJson.version,
-  description: packageJson.description,
+  description: "__MSG_appDesc__",
   background: {
     service_worker: "src/pages/background/index.js",
     type: "module",
@@ -41,7 +41,8 @@ const manifest: chrome.runtime.ManifestV3 = {
   permissions: [
     "contextMenus",
     "storage"
-  ]
+  ],
+  default_locale: "es"
 };
 
 export default manifest;

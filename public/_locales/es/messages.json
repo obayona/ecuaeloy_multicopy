@@ -1,0 +1,20 @@
+{
+  "appName": {
+    "message": "EcuaEloy Multicopy"
+  },
+  "appDesc": {
+    "message": "Copia multiples textos, los concatena y luego pega."
+  },
+  "copyAll": {
+    "message": "Copiar Todo"
+  },
+  "clear": {
+    "message": "Limpiar"
+  },
+  "copy": {
+    "message": "Copiar"
+  },
+  "remove": {
+    "message": "Eliminar"
+  }
+}
