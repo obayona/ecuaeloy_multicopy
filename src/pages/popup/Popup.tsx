@@ -18,10 +18,10 @@ const Popup = () => {
 
   return (
     <div className="popup">
-      <div className="popup-header">
-        <header className="popup-logo">
+      <header>
+        <div className="popup-logo">
           <img src={logo} alt="EcuaEloy multicopy logo"/>
-        </header>
+        </div>
 
         <div className="popup-menu">
           <button className="popup-menu-button" title={chrome.i18n.getMessage("copyAll")} onClick={copyAll}>
@@ -32,14 +32,14 @@ const Popup = () => {
             <img src={deleteIcon} alt=""/>
           </button>
         </div>
-      </div>
+      </header>
 
       <ul className="popup-list">
         {items.map(({key, value}) => (
           <li key={key} className="popup-item">
             <span>{truncate(value, 30)}</span>
 
-            <span>
+            <span className="popup-button-group">
               <button className="popup-menu-button" title={chrome.i18n.getMessage("copy")} onClick={() => copyItem(key)}>
                 <img src={copyIcon} alt=""/>
               </button>

@@ -1,12 +1,7 @@
 .popup {
   background-color: white;
   position: relative;
-}
-
-.popup-header {
-  position: sticky;
-  top: 0;
-  left: 0;
+  border-bottom: solid 3px #f7d600;
 }
 
 .popup-logo {
@@ -14,7 +9,6 @@
   display: flex;
   width: 100%;
   justify-content: center;
-  padding: 0 8px;
 }
 
 .popup-logo img {
@@ -22,10 +16,15 @@
 }
 
 .popup-menu {
-  background-color: #F7D600;
+  background-image: linear-gradient(
+    90deg,
+    hsl(52deg 100% 48%) 2%,
+    hsl(42deg 6% 53%) 78%,
+    hsl(303deg 35% 39%) 91%,
+    hsl(358deg 80% 50%) 100%
+  );
   display: flex;
   align-items: center;
-  gap: 8px;
   padding: 0 8px;
 }
 
@@ -41,7 +40,8 @@
 }
 
 .popup-list {
-  padding: 8px;
+  padding: 0;
+  margin: 0;
   list-style: none;
   height: 250px;
   overflow: auto;
@@ -51,4 +51,22 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 2px 0 2px 16px;
+}
+
+.popup-item:nth-child(3n+1) {
+  background-color: #f5f4d7;
+}
+
+.popup-item:nth-child(3n+2) {
+  background-color: #f0f8ff;
+}
+
+.popup-item:nth-child(3n) {
+  background-color: #f0c2c2;
+}
+
+.popup-button-group {
+  display: flex;
+  flex-wrap: nowrap;
 }
