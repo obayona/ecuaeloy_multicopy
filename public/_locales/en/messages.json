@@ -16,5 +16,8 @@
   },
   "remove": {
     "message": "Remove"
+  },
+  "emptyItems": {
+    "message": "Select text, right click, copy"
   }
 }

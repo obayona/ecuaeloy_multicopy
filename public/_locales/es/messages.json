@@ -16,5 +16,8 @@
   },
   "remove": {
     "message": "Eliminar"
+  },
+  "emptyItems": {
+    "message": "Seleccione texto, click derecho, copiar"
   }
 }

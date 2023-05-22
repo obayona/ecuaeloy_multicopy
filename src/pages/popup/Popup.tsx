@@ -35,6 +35,8 @@ const Popup = () => {
       </header>
 
       <ul className="popup-list">
+        {items.length === 0 && <div className="popup-empty-message">{chrome.i18n.getMessage("emptyItems")}</div>}
+
         {items.map(({key, value}) => (
           <li key={key} className="popup-item">
             <span>{truncate(value, 30)}</span>
